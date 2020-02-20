@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+.preloader{
+  position: fixed;
+  top:0;
+  left:0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  z-index: 99999;
+}
+
+.preloader .preloader-gif{
+  display: block;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: url('loader.gif') no-repeat;   
+}
+
 #projects{
   left: 20px;
   top: 50px;
@@ -233,5 +254,8 @@ input, textarea{
     text-align: center;
     background-color: rgba(0,0,0,0.9);
   }
-  
+  .preloader .preloader-gif{
+    width: 200px;
+    height: 200px;
+  }
 }
