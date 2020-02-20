@@ -15,9 +15,7 @@ let c3 = createCanvas({width: $(window).width(), height: $(window).height()})
 let tela   = c1.canvas;
 let canvas = c1.context;
 
-// $("body").append(tela);
-$("body").append(c3.canvas);
-writeText(c2.canvas, c2.context, "MADHABA\nPATRA\n")
+
 
 
 class Particle{
@@ -81,7 +79,19 @@ function createCanvas(properties){
   }
 }
 
-function writeText(canvas, context, text){
+function writeTextInMobile(canvas, context, text){
+  let size = 70
+  context.font = size + "px Montserrat";
+  context.fillStyle = "#111111";
+  context.textAlign = "center";
+  let lineheight = 100
+  let lines = text.split('\n');
+  for(let i = 0; i<lines.length; i++){
+    context.fillText(lines[i], canvas.width/2, canvas.height/2.5 + lineheight*i - (lineheight*(lines.length-1))/3);
+  }
+}
+
+function writeTextInWeb(canvas, context, text){
   let size = 100
   context.font = size + "px Montserrat";
   context.fillStyle = "#111111";
@@ -106,6 +116,20 @@ function blur(ctx,canvas, amt) {
   ctx.filter = 'none'
 }
 
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    // $("body").append(tela);
+$("body").append(c3.canvas);
+writeTextInMobile(c2.canvas, c2.context, "MADHABA\nPATRA\n")
+  } else {
+    $("body").append(c3.canvas);
+    writeTextInWeb(c2.canvas, c2.context, "MADHABA\nPATRA\n")
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction)
 
 /*
  * Function to clear layer canvas

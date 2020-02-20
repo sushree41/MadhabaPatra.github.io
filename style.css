@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600");
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 #projects{
-  color: rgb(201, 177, 177);
   left: 20px;
   top: 50px;
   position:fixed;
   font-family: "Montserrat";
+  z-index: 12;
   display: none;
 }
 #projects li{
   margin-top: 5px;
+  color: rgb(201, 177, 177);
 }
 .img-profile {
   top: 20px;
@@ -29,6 +30,7 @@ background-color:#FF5E4C;
   height: 150px;
   left: 90%;
   display: none;
+  z-index: 12;
 }
 .more-pens {
   position: fixed;
@@ -129,26 +131,7 @@ body {
   letter-spacing: 2px;
   position:fixed;
 }
-@media screen and (max-width:768px){
-  .title h3{
-    font-size: 15px;
-    margin-top: 20px;
-    top: 4%;
-  }
-  .more-pens{
-    font-size: 12px !important;
-  }
-  .white-mode{
-    font-size: 12px !important;
-    padding: 2px 4px !important;
-  }
-  .top-left{
-    left: 1px !important;
-  }
-  .top-right{
-    right: 1px !important;
-  }
-}
+
 strong{
   color: #FF5E4C !important;
 }
@@ -179,11 +162,12 @@ form{
   position: fixed;
   bottom: 60px;
   margin: 10px;
-  z-index: 11;
+  z-index: 12;
   font-family: "Montserrat";
   display: none;
 }
-input{
+input, textarea{
+  width: 100%;
   background: transparent;
   margin-top: 4px;
   color: white;
@@ -207,3 +191,47 @@ input{
   background: #f7f7f7;
 }
 
+
+/* Responsive */
+
+@media screen and (max-width:768px){
+  .title h3{
+    font-size: 15px;
+    margin-top: 20px;
+    top: 4%;
+  }
+  .more-pens{
+    font-size: 12px !important;
+  }
+  .white-mode{
+    font-size: 12px !important;
+    padding: 2px 4px !important;
+  }
+  .top-left{
+    left: 1px !important;
+  }
+  .top-right{
+    right: 1px !important;
+  }
+  #projects{
+    background-color: rgba(0,0,0,0.9);
+    height: 80%;
+  }
+  #projects li{
+   padding: 10px;
+  }
+  .img-donate{
+    height: 70%;
+    background-color: rgba(0,0,0,0.8);
+    left: 10%;
+    width: 80%;
+  }
+  form{
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    text-align: center;
+    background-color: rgba(0,0,0,0.9);
+  }
+  
+}
