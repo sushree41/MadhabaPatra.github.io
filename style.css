@@ -164,8 +164,8 @@ strong a{
   color: #EEEEEE;
   margin:0px;
   z-index: 11;
-  position: fixed;
-  top: 30%;
+  top: 20px;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
 }
