@@ -10,7 +10,7 @@
 
 @-webkit-keyframes bounce {
   from,
-  20%,
+  10%,
   53%,
   80%,
   to {
@@ -20,7 +20,7 @@
     transform: translate3d(0, 0, 0);
   }
 
-  40%,
+  30%,
   43% {
     -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
     animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
